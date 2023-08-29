@@ -1,17 +1,25 @@
 <main class="add-recipe">
     <h2>✨ Explore ✨</h2>
-    <input [(ngModel)]="searchQuery" placeholder="Search for a recipe">
+    <input [(ngModel)]="searchQuery" placeholder="Search for a recipe" (keyup.enter)="searchRecipes()">
     <button (click)="searchRecipes()">Search</button>
 
     <div class="recipe-list">
+        <div class="loader" *ngIf="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div *ngFor="let hit of recipes" class="recipe-preview">
             <div class="info">
                 <div class="data">
                     <h3>{{ hit.recipe.label }}</h3>
-                    <button (click)="addRecipeToLocalStorage(hit)">Save</button>
+                    <button class="popup-button" (click)="addRecipeToLocalStorage(hit)">Save</button>
                 </div>
                 <img [src]="hit.recipe.image" [alt]="hit.recipe.label">
             </div>
         </div>
     </div>
 </main>
+
+<app-pop-up-message [message]="'Recipe saved!'" [showMessage]="showPopUpMessage"></app-pop-up-message>
