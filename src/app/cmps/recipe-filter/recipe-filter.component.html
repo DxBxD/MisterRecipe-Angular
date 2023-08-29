@@ -1,0 +1,4 @@
+<form [style.margin-bottom.px]="20">
+    <input [(ngModel)]="filterBy.term" (ngModelChange)="onSetFilterBy($event)" type="text" name="term"
+        placeholder="Search saved recipes">
+</form>

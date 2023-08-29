@@ -1,0 +1,17 @@
+<main class="add-recipe">
+    <h2>✨ Explore ✨</h2>
+    <input [(ngModel)]="searchQuery" placeholder="Search for a recipe">
+    <button (click)="searchRecipes()">Search</button>
+
+    <div class="recipe-list">
+        <div *ngFor="let hit of recipes" class="recipe-preview">
+            <div class="info">
+                <div class="data">
+                    <h3>{{ hit.recipe.label }}</h3>
+                    <button (click)="addRecipeToLocalStorage(hit)">Save</button>
+                </div>
+                <img [src]="hit.recipe.image" [alt]="hit.recipe.label">
+            </div>
+        </div>
+    </div>
+</main>

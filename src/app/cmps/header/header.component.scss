@@ -1,0 +1,49 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    a,
+    h1 {
+        color: white;
+        text-decoration: none;
+        font-family: "Phudu", sans-serif;
+        margin: 0;
+    }
+
+    nav {
+        a {
+            margin: 0 0.5em;
+            color: white;
+            text-decoration: none;
+            font-family: "phudu", sans-serif;
+            font-weight: bold;
+            font-size: 1.3em;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &.active {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        justify-content: center;
+        margin-top: 0.5em;
+    }
+}

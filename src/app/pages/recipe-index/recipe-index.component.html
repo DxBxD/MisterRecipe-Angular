@@ -1,0 +1,6 @@
+<main class="home">
+    <section class="recipe-index">
+        <app-recipe-filter></app-recipe-filter>
+        <app-recipe-list (remove)="onRemoveRecipe($event)" [recipes]="recipes$ | async"></app-recipe-list>
+    </section>
+</main>

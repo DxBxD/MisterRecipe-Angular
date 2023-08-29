@@ -1,0 +1,4 @@
+<section class="recipe-list">
+    <app-recipe-preview (remove)="remove.emit($event)" *ngFor="let recipe of recipes"
+        [recipe]="recipe"></app-recipe-preview>
+</section>

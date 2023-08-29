@@ -1,0 +1,17 @@
+<section class="recipe-preview">
+    <section class="info">
+        <section class="data">
+            <h3>{{ recipe.label }}</h3>
+            <p>Diet Labels: {{ recipe.dietLabels.length > 0 ? recipe.dietLabels.join(', ') : 'None' }}</p>
+            <p>Ingredients:</p>
+            <ul>
+                <li *ngFor="let ingredient of recipe.ingredientLines">{{ ingredient }}</li>
+            </ul>
+            <p><a [href]="recipe.url" target="_blank">View Recipe</a></p>
+            <img [src]="recipe.image" [alt]="recipe.label">
+            <section class="actions">
+                <button (click)="remove.emit(recipe._id)" class="remove-btn">X</button>
+            </section>
+        </section>
+    </section>
+</section>
